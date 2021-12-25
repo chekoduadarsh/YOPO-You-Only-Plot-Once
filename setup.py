@@ -14,7 +14,7 @@ setuptools.setup(
     license='Apache License 2.0',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/chekoduadarsh/yopo",
+    url="https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once",
     packages=setuptools.find_packages(exclude=("tests",)),
     install_requires=[
         "MarkupSafe>=2.0",
