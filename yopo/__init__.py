@@ -1,5 +1,3 @@
-name="yopo"
-
 import json
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -13,7 +11,7 @@ import string
 import os
 import random
 from jupyter_dash import JupyterDash
-from yopo.dashboard import dashboard
+from yopo.dashboard import dashboardApp
 
 
 dash_app = JupyterDash(
@@ -26,13 +24,7 @@ dash_app = JupyterDash(
 
 dash_app.layout = html.Div()
 
-def dash_app_run(df,mode):
+def dashboard(input=pd.DataFrame(),mode="inline",port=8050):
     global dash_app
-    dash_app = dashboard(df,dash_app)
-    dash_app.run_server(mode=mode)
-
-def shutdown():
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
-    func()
+    dash_app = dashboardApp(input,dash_app)
+    dash_app.run_server(mode=mode,port=port)

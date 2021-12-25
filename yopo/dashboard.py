@@ -17,7 +17,7 @@ import urllib.parse
 
 #yolo_plot_df = pd.DataFrame()
 
-def dashboard(df, dash_app):
+def dashboardApp(df, dash_app):
     """Create a Plotly Dash dashboard."""    
 
     dropdowns = []
