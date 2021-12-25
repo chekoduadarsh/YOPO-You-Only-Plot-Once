@@ -1,2 +1,11 @@
+MarkupSafe>=2.0
+jupyter_dash
+click>=7.1.2
 ipython
 jupyter
+wtforms
+dash==2.0.0
+dash_daq
+dash_trich_components
+pandas
+numpy

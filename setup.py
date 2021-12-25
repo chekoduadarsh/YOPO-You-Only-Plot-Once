@@ -1,7 +1,10 @@
 import setuptools
 
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
+    
 setuptools.setup(
     name="yopo",
     version="0.0.1",
@@ -9,6 +12,9 @@ setuptools.setup(
     author_email="chekodu.adarsh@gmail.com",
     description="You Plot Only Once",
     license='Apache License 2.0',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/chekoduadarsh/yopo",
     packages=setuptools.find_packages(exclude=("tests",)),
     install_requires=[
         "MarkupSafe>=2.0",

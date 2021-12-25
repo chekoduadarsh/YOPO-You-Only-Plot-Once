@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.1
 Name: yopo
 Version: 0.0.1
 Summary: You Plot Only Once
@@ -6,9 +6,7 @@ Home-page: UNKNOWN
 Author: Adarsh Chekodu
 Author-email: chekodu.adarsh@gmail.com
 License: Apache License 2.0
+Description: UNKNOWN
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
-
-UNKNOWN
-
