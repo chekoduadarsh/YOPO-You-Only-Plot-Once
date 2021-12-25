@@ -1,0 +1,6 @@
+setup.py
+yopo.egg-info/PKG-INFO
+yopo.egg-info/SOURCES.txt
+yopo.egg-info/dependency_links.txt
+yopo.egg-info/requires.txt
+yopo.egg-info/top_level.txt
