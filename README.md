@@ -6,7 +6,12 @@
 YOPO is an interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
 
 # Table of contents
-
+- [YOPO :chart_with_upwards_trend:](#yopo-chart_with_upwards_trend)
+- [Table of contents](#table-of-contents)
+- [Installing YOPO](#installing-yopo)
+- [Usage](#usage)
+- [Contribute](#contribute)
+- [License](#license)
 
 # Installing YOPO
 
@@ -42,4 +47,15 @@ A code like this will generate multiple plots like given below.
 ![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_histogram.png)
 ![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_scatterplot.png)
 
-# :warning: Work in Progress
+
+
+# Contribute
+
+If you find any error or need support please raise a issue. If you think you can add a feature, or help solve a bug please raise a PR
+This repo welcomes any kind of contributions pray
+
+Feel free to adapt it criticize it and support it the way you like!!
+
+# License
+
+Apache License, Version 2.0
