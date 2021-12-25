@@ -1,12 +1,22 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: yopo
-Version: 0.0.1
+Version: 0.0.3
 Summary: You Plot Only Once
-Home-page: UNKNOWN
+Home-page: https://github.com/chekoduadarsh/yopo
 Author: Adarsh Chekodu
 Author-email: chekodu.adarsh@gmail.com
 License: Apache License 2.0
-Description: UNKNOWN
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# YOPO
+
+**You Only Plot Once**
+
+YOPO lets you plot various graphs and charts with a click of a button. This tool uses Dash and Flask in backend
+
+# :warning: Work in Progress
+
