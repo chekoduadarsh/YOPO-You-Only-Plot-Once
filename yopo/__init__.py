@@ -12,7 +12,7 @@ import os
 import random
 from jupyter_dash import JupyterDash
 from yopo.dashboard import dashboardApp
-
+import requests
 
 dash_app = JupyterDash(
     external_stylesheets=[
@@ -28,3 +28,12 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050):
     global dash_app
     dash_app = dashboardApp(input,dash_app)
     dash_app.run_server(mode=mode,port=port)
+
+def kill_dashboard(host="localhost", port=8050):
+    shutdown_url = "http://{host}:{port}/_shutdown_{token}".format(
+        host=host, port=port, token=JupyterDash._token
+    )
+    try:
+        response = requests.get(shutdown_url)
+    except Exception as e:
+        print(e)

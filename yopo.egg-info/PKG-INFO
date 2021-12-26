@@ -12,15 +12,22 @@ Classifier: Operating System :: OS Independent
 Description-Content-Type: text/markdown
 License-File: LICENSE.txt
 
-# YOPO :chart_with_upwards_trend:
+# **YOPO** (You Only Plot Once)
+![](https://img.shields.io/github/license/chekoduadarsh/YOPO-You-Only-Plot-Once)
+![](https://img.shields.io/github/issues/chekoduadarsh/YOPO-You-Only-Plot-Once)
+![](https://img.shields.io/github/last-commit/chekoduadarsh/YOPO-You-Only-Plot-Once)
 
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
 **You Only Plot Once**
 
 YOPO is an interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
 
 # Table of contents
-- [YOPO :chart_with_upwards_trend:](#yopo-chart_with_upwards_trend)
+- [**YOPO** (You Only Plot Once)](#yopo-you-only-plot-once)
 - [Table of contents](#table-of-contents)
 - [Installing YOPO](#installing-yopo)
 - [Usage](#usage)
@@ -53,13 +60,13 @@ python3 -m pip install .
 # Usage
 
 its very easy to use YOPO, u just need to pass the dataframe and it will generate the dashboard. 
-![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_iris_code.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_iris_code.png)
 
 A code like this will generate multiple plots like given below.
 
-![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_dataframe.png)
-![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_histogram.png)
-![](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/media/sample_scatterplot.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_dataframe.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_histogram.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_scatterplot.png)
 
 
 
@@ -72,5 +79,5 @@ Feel free to adapt it criticize it and support it the way you like!!
 
 # License
 
-Apache License, Version 2.0
+[Apache License, Version 2.0](https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/LICENSE.txt)
 

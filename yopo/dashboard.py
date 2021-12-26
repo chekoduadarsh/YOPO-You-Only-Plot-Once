@@ -48,7 +48,7 @@ def dashboardApp(df, dash_app):
     # Create Layout
     dash_app.layout = html.Div([
 
-    dcc.Tabs(id="tabs", value='tab-1',  children=[
+      dcc.Tabs(id="tabs", value='tab-1',  children=[
 
         dcc.Tab(label='DataFrame View', value='tab-1' , style=tab_style, selected_style=tab_selected_style, children = [    
             create_data_table(df)
@@ -214,6 +214,33 @@ def dashboardApp(df, dash_app):
                 ]),
             ]),
         ]),
+
+        dcc.Tab(label='Geological Plots', value='tab-geo' , style=tab_style, selected_style=tab_selected_style, children = [  
+             dcc.Tabs(id="tabs-geo", children=[    
+                # dcc.Tab(label='Map Choropleth Plot', value='tab-map-choropleth' , style=tab_style, selected_style=tab_selected_style, children = [   
+                # ]),
+                dcc.Tab(label='Map Density Heatmap', value='tab-map-density' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+
+                 ]),
+                dcc.Tab(label='Line on Maps Heatmap', value='tab-map-line' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+                    html.Div( id='input-map-line-mandatory', children = [  
+                    dcc.Dropdown(id='input-map-line-location', options=dropdowns, placeholder='Enter Loaction Value')
+                    ]),
+
+                    html.Div( id='input-map-line-not-mandatory', children = [  
+                    dcc.Dropdown(id='input-map-line-color', options=dropdowns, placeholder='Enter Color Value'),
+                    dcc.Dropdown(id='input-map-line-size', options=dropdowns, placeholder='Enter Size Value')
+                    ]),
+
+                    html.Button(id='submit-button-map-line', n_clicks=0, children='Submit'),
+
+                    html.Div(id='output-state-map-line', children = []),
+
+                 ]),
+             ]),
+        ]) ,    
         dcc.Tab(label='Trend Line', value='tab-trend' , style=tab_style, selected_style=tab_selected_style, children = [           
             dcc.Tabs(id="tabs-trend", children=[
                 dcc.Tab(label='Regressions', value='tab-8' , style=tab_style, selected_style=tab_selected_style, children = [   
@@ -277,7 +304,6 @@ def dashboardApp(df, dash_app):
 
         return  "Fill the required fields and click on 'Submit' to generate teh graph you want!!"
 
-
     @dash_app.callback(Output('output-state-line', 'children'),
               Input('submit-button-line', 'n_clicks'),
               State('input-x-line', 'value'),
@@ -313,8 +339,6 @@ def dashboardApp(df, dash_app):
                     )
 
         return  "Fill the required fields and click on 'Submit' to generate teh graph you want!!"
-
-
 
     @dash_app.callback(Output('output-state-bar', 'children'),  
               Input('submit-button-bar', 'n_clicks'),
@@ -549,15 +573,6 @@ def dashboardApp(df, dash_app):
                                 figure=fig
                             )                                                                                                             
         return  "Fill the required fields and click on 'Submit' to generate teh graph you want!!"
-   
-    @dash_app.callback(
-        Output('toggle-switch-output', 'children'),
-        Input('toggle-switch', 'value')
-    )
-    def update_output(value):
-        return 'The switch is {}.'.format(value)
-
-
 
     @dash_app.callback(Output('output-state-regscatter', 'children'),
               Input('submit-button-regscatter', 'n_clicks'),
@@ -596,6 +611,26 @@ def dashboardApp(df, dash_app):
 
         return  "Fill the required fields and click on 'Submit' to generate teh graph you want!!"
 
+    
+    @dash_app.callback(Output('output-state-map-line', 'children'),  
+              Input('submit-button-map-line', 'n_clicks'),
+              State('input-map-line-location', 'value'),
+              State('input-map-line-color', 'value'))
+    def update_maplineplot(n_clicks, input1, input2): 
+        if str(input1) in df.columns:
+            if (input2 is None):
+                fig = px.line_geo(df, locations=str(input1),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if not (input2 is None):
+                fig = px.line_geo(df, locations=str(input1), color=str(input2),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+        return  "Fill the required fields and click on 'Submit' to generate teh graph you want!!"
 
    
     return dash_app
