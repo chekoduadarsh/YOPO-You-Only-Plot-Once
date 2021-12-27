@@ -215,7 +215,7 @@ def dashboardApp(df, dash_app):
             ]),
         ]),
         dcc.Tab(label='Geological Plots', value='tab-geo' , style=tab_style, selected_style=tab_selected_style, children = [  
-             dcc.Tabs(id="tabs-stat", children=[    
+             dcc.Tabs(id="tabs-geo", children=[    
                  #dcc.Tab(label='Map Choropleth Plot', value='tab-map-choropleth' , style=tab_style, selected_style=tab_selected_style, children = [   
 
 
