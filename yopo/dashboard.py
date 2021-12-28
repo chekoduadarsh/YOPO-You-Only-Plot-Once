@@ -13,6 +13,7 @@ import string
 import random
 import dash_trich_components as dtc
 import urllib.parse
+import plotly.graph_objects as go
 
 
 #yolo_plot_df = pd.DataFrame()
@@ -272,6 +273,38 @@ def dashboardApp(df, dash_app):
 
                  ]),
              ]),
+        ]) ,  
+        dcc.Tab(label='Financial Charts ', value='tab-fin' , style=tab_style, selected_style=tab_selected_style, children = [  
+             dcc.Tabs(id="tabs-fin", children=[    
+                dcc.Tab(label='Candlestick Chart', value='tab-candlestick' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+                    html.Div( id='input-candlestick-mandatory', children = [  
+                    dcc.Dropdown(id='input-candlestick-date', options=dropdowns, placeholder='Enter Date Value'),
+                    dcc.Dropdown(id='input-candlestick-open', options=dropdowns, placeholder='Enter Open Value'),
+                    dcc.Dropdown(id='input-candlestick-high', options=dropdowns, placeholder='Enter High Value'),
+                    dcc.Dropdown(id='input-candlestick-low', options=dropdowns, placeholder='Enter Low Value'),
+                    dcc.Dropdown(id='input-candlestick-close', options=dropdowns, placeholder='Enter Close Value'),
+                    ]),
+
+                    html.Button(id='submit-button-candlestick', n_clicks=0, children='Submit'),
+
+                    html.Div(id='output-state-candlestick', children = []),
+                 ]),
+                 dcc.Tab(label='OHLC Chart', value='tab-ohlc' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+                    html.Div( id='input-ohlc-mandatory', children = [  
+                    dcc.Dropdown(id='input-ohlc-date', options=dropdowns, placeholder='Enter Date Value'),
+                    dcc.Dropdown(id='input-ohlc-open', options=dropdowns, placeholder='Enter Open Value'),
+                    dcc.Dropdown(id='input-ohlc-high', options=dropdowns, placeholder='Enter High Value'),
+                    dcc.Dropdown(id='input-ohlc-low', options=dropdowns, placeholder='Enter Low Value'),
+                    dcc.Dropdown(id='input-ohlc-close', options=dropdowns, placeholder='Enter Close Value'),
+                    ]),
+
+                    html.Button(id='submit-button-ohlc', n_clicks=0, children='Submit'),
+
+                    html.Div(id='output-state-ohlc', children = []),
+                 ]),
+            ]),
         ]) ,  
         dcc.Tab(label='Trend Line', value='tab-trend' , style=tab_style, selected_style=tab_selected_style, children = [           
             dcc.Tabs(id="tabs-trend", children=[
@@ -764,7 +797,49 @@ def dashboardApp(df, dash_app):
                         figure=fig
                     )
         return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
-  
+ 
+    @dash_app.callback(Output('output-state-candlestick', 'children'),  
+              Input('submit-button-candlestick', 'n_clicks'),
+              State('input-candlestick-date', 'value'),
+              State('input-candlestick-open', 'value'),
+              State('input-candlestick-high', 'value'),
+              State('input-candlestick-low', 'value'),
+              State('input-candlestick-close', 'value'))
+    def update_candlestick(n_clicks, input1, input2, input3, input4, input5): 
+        if str(input1) in df.columns and str(input2) in df.columns and str(input3) in df.columns and str(input4) in df.columns and str(input5) in df.columns:
+            print("FIGURE")
+            fig = go.Figure(data=[go.Candlestick(x=df[str(input1)],
+                        open=df[str(input2)],
+                        high=df[str(input3)],
+                        low=df[str(input4)],
+                        close=df[str(input5)])])
+            return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+        return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+ 
+    @dash_app.callback(Output('output-state-ohlc', 'children'),  
+              Input('submit-button-ohlc', 'n_clicks'),
+              State('input-ohlc-date', 'value'),
+              State('input-ohlc-open', 'value'),
+              State('input-ohlc-high', 'value'),
+              State('input-ohlc-low', 'value'),
+              State('input-ohlc-close', 'value'))
+    def update_candlestick(n_clicks, input1, input2, input3, input4, input5): 
+        if str(input1) in df.columns and str(input2) in df.columns and str(input3) in df.columns and str(input4) in df.columns and str(input5) in df.columns:
+            print("FIGURE")
+            fig = go.Figure(data=[go.Ohlc(x=df[str(input1)],
+                        open=df[str(input2)],
+                        high=df[str(input3)],
+                        low=df[str(input4)],
+                        close=df[str(input5)])])
+            return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+        return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+    
     return dash_app
 
 
