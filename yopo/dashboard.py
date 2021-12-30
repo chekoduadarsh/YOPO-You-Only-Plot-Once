@@ -308,7 +308,7 @@ def dashboardApp(df, dash_app):
         ]) ,  
         dcc.Tab(label='Scientific Charts ', value='tab-sci' , style=tab_style, selected_style=tab_selected_style, children = [  
              dcc.Tabs(id="tabs-sci", children=[    
-                dcc.Tab(label='Ternary Plots', value='tab-candlestick' , style=tab_style, selected_style=tab_selected_style, children = [   
+                dcc.Tab(label='Ternary Plots', value='tab-ternary' , style=tab_style, selected_style=tab_selected_style, children = [   
 
                     html.Div( id='input-ternary-mandatory', children = [  
                     dcc.Dropdown(id='input-a-ternary', options=dropdowns, placeholder='Enter A corner Value'),
@@ -317,14 +317,32 @@ def dashboardApp(df, dash_app):
                     ]),
 
                     html.Div( id='input-ternary-not-mandatory', children = [                    
-                    dcc.Dropdown(id='input-color-ternary', options=dropdowns, placeholder='Enter Color axis Value'),
-                    dcc.Dropdown(id='input-size-ternary', options=dropdowns, placeholder='Enter Size axis Value'),
+                    dcc.Dropdown(id='input-color-ternary', options=dropdowns, placeholder='Enter Color Value'),
+                    dcc.Dropdown(id='input-size-ternary', options=dropdowns, placeholder='Enter Size Value'),
                     ]),
                 
 
                     html.Button(id='submit-button-ternary', n_clicks=0, children='Submit'),
 
                     html.Div(id='output-state-ternary', children = []),
+                 ]),
+                dcc.Tab(label='Polar Charts', value='tab-polar' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+                    html.Div( id='input-polar-mandatory', children = [  
+                    dcc.Dropdown(id='input-r-polar', options=dropdowns, placeholder='Enter R Value'),
+                    dcc.Dropdown(id='input-theta-polar', options=dropdowns,placeholder='Enter Theta Value'),
+                    ]),
+
+                    html.Div( id='input-polar-not-mandatory', children = [                    
+                    dcc.Dropdown(id='input-color-polar', options=dropdowns, placeholder='Enter Color Value'),
+                    dcc.Dropdown(id='input-size-polar', options=dropdowns, placeholder='Enter Size Value'),
+                    dcc.Dropdown(id='input-symbol-polar', options=dropdowns, placeholder='Enter Symbol Value'),
+                    ]),
+                
+
+                    html.Button(id='submit-button-polar', n_clicks=0, children='Submit'),
+
+                    html.Div(id='output-state-polar', children = []),
                  ]),
             ]),
         ]) , 
@@ -861,6 +879,7 @@ def dashboardApp(df, dash_app):
                         figure=fig
                     )
         return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+
  
     @dash_app.callback(Output('output-state-ternary', 'children'),
               Input('submit-button-ternary', 'n_clicks'),
@@ -899,7 +918,70 @@ def dashboardApp(df, dash_app):
 
         return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
 
-       
+  
+    @dash_app.callback(Output('output-state-polar', 'children'),
+              Input('submit-button-polar', 'n_clicks'),
+              State('input-r-polar', 'value'),
+              State('input-theta-polar', 'value'),
+              State('input-color-polar', 'value'),
+              State('input-color-polar', 'value'),
+              State('input-symbol-polar', 'value'))
+    def update_polarplot(n_clicks, input1, input2, input3, input4, input5): 
+        if str(input1) in df.columns and str(input2) in df.columns:
+            if (input4 is None) and (input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if (input3 is None) and not(input4 is None) and (input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), size=str(input4),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )    
+
+            if not(input3 is None) and (input4 is None) and (input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), color=str(input3),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if not(input3 is None) and not(input4 is None) and (input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), color=str(input3), size=str(input4),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if (input4 is None) and not(input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), symbol=str(input5),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if (input3 is None) and not(input4 is None) and not(input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), size=str(input4), symbol=str(input5),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )    
+
+            if not(input3 is None) and (input4 is None) and not(input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), color=str(input3), symbol=str(input5),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+            if not(input3 is None) and not(input4 is None) and not(input5 is None):
+                fig = px.scatter_polar(df, r=str(input1), theta=str(input2), color=str(input3), size=str(input4), symbol=str(input5),template = plot_theme)
+                return dcc.Graph(
+                        id='graph-1-tabs',
+                        figure=fig
+                    )
+
+        return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+
+      
     return dash_app
 
 
