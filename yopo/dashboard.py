@@ -344,6 +344,22 @@ def dashboardApp(df, dash_app):
 
                     html.Div(id='output-state-polar', children = []),
                  ]),
+                dcc.Tab(label='Streamtube', value='tab-streamtube' , style=tab_style, selected_style=tab_selected_style, children = [   
+
+                    html.Div( id='input-streamtube-mandatory', children = [  
+                    dcc.Dropdown(id='input-x-streamtube', options=dropdowns, placeholder='Enter X Value'),
+                    dcc.Dropdown(id='input-y-streamtube', options=dropdowns,placeholder='Enter Y Value'),                                  
+                    dcc.Dropdown(id='input-z-streamtube', options=dropdowns, placeholder='Enter Z Value'),
+                    dcc.Dropdown(id='input-u-streamtube', options=dropdowns, placeholder='Enter U Value'),
+                    dcc.Dropdown(id='input-v-streamtube', options=dropdowns, placeholder='Enter V Value'),
+                    dcc.Dropdown(id='input-w-streamtube', options=dropdowns, placeholder='Enter W Value'),
+                    ]),
+                
+
+                    html.Button(id='submit-button-streamtube', n_clicks=0, children='Submit'),
+
+                    html.Div(id='output-state-streamtube', children = []),
+                 ]),
             ]),
         ]) , 
         dcc.Tab(label='Trend Line', value='tab-trend' , style=tab_style, selected_style=tab_selected_style, children = [           
@@ -368,6 +384,14 @@ def dashboardApp(df, dash_app):
 
                 ]),
             ]),
+        ]),
+        dcc.Tab(label='Custom Plots', value='tab-custom' , style=tab_style, selected_style=tab_selected_style, children = [         
+            html.Div( id='input-custom-mandatory', children = [  
+            dcc.Textarea(id='input-custom-code', placeholder="use variable 'df' as datta frame and export plotly figure to variable 'fig'", style={'width': '100%', 'height': 300}),
+            ]),
+            html.Button(id='submit-button-custom', n_clicks=0, children='Submit'),
+
+            html.Div(id='output-state-custom', children = []),
         ]),
     ]),
     html.Div(id='tabs-content')
@@ -981,7 +1005,41 @@ def dashboardApp(df, dash_app):
 
         return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
 
-      
+ 
+    
+    @dash_app.callback(Output('output-state-streamtube', 'children'),
+              Input('submit-button-streamtube', 'n_clicks'),
+              State('input-x-streamtube', 'value'),
+              State('input-y-streamtube', 'value'),
+              State('input-z-streamtube', 'value'),
+              State('input-u-streamtube', 'value'),
+              State('input-v-streamtube', 'value'),
+              State('input-w-streamtube', 'value'))
+    def update_streamtubeplot(n_clicks, input1, input2, input3, input4, input5, input6): 
+        if str(input1) in df.columns and str(input2) in df.columns and str(input3) in df.columns and str(input4) in df.columns and str(input5) in df.columns and str(input6) in df.columns:
+            fig = go.Figure(data=go.Streamtube(x = df[input1], y = df[input2], z = df[input3], u = df[input4], v = df[input5], w = df[input6]))
+            return dcc.Graph(
+                    id='graph-1-tabs',
+                    figure=fig
+                )
+        return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+
+
+    
+    @dash_app.callback(Output('output-state-custom', 'children'),
+              Input('submit-button-custom', 'n_clicks'),
+              State('input-custom-code', 'value'))
+    def update_customplot(n_clicks, input1): 
+        if not(input1 is None):
+            df
+            _locals = locals()
+            exec(input1, globals(),_locals)
+            return dcc.Graph(
+                    id='graph-1-tabs',
+                    figure=_locals["fig"]
+            )
+        return  "Fill the required fields and click on 'Submit' to generate the graph you want!!"
+     
     return dash_app
 
 
