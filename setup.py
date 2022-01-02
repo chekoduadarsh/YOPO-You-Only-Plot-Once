@@ -27,7 +27,8 @@ setuptools.setup(
         "dash_daq",
         "dash_trich_components",
         "pandas",
-        "numpy"
+        "numpy",
+        "pyngrok"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
