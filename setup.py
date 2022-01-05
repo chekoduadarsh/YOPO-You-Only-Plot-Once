@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="yopo",
-    version="0.0.7",
+    version="0.0.11",
     author="Adarsh Chekodu",
     author_email="chekodu.adarsh@gmail.com",
     description="You Plot Only Once",
@@ -28,6 +28,7 @@ setuptools.setup(
         "dash_trich_components",
         "pandas",
         "numpy",
+        "dash_bootstrap_components",
         "pyngrok"
     ],
     classifiers=[

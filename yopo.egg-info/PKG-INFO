@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: yopo
-Version: 0.0.7
+Version: 0.0.11
 Summary: You Plot Only Once
 Home-page: https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once
 Author: Adarsh Chekodu
@@ -25,6 +25,10 @@ License-File: LICENSE.txt
 **You Only Plot Once**
 
 YOPO is an interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/example.ipynb)
+
 
 # Table of contents
 - [**YOPO** (You Only Plot Once)](#yopo-you-only-plot-once)

@@ -14,6 +14,7 @@ import random
 import dash_trich_components as dtc
 import urllib.parse
 import plotly.graph_objects as go
+import dash_bootstrap_components as dbc
 
 
 #yolo_plot_df = pd.DataFrame()
@@ -67,7 +68,6 @@ def dashboardApp(df, dash_app):
     #                    {"label":"5-point Exponentially Weighted Moving Average", "value":"ewm"},
                         {"label":"Expanding Mean", "value":"expanding"},]
     # Custom HTML layout
-    dash_app.index_string = html_layout
 
     # Create Layout
     dash_app.layout = html.Div([
@@ -257,7 +257,7 @@ def dashboardApp(df, dash_app):
             ]),
         ]),
         dcc.Tab(label='Geological Plots', value='tab-geo' , style=tab_style, selected_style=tab_selected_style, children = [  
-             dcc.Tabs(id="tabs-stat", children=[    
+             dcc.Tabs(id="geo-stat", children=[    
                  #dcc.Tab(label='Map Choropleth Plot', value='tab-map-choropleth' , style=tab_style, selected_style=tab_selected_style, children = [   
 
 

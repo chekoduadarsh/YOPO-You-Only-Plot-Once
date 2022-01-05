@@ -17,7 +17,7 @@ from pyngrok import ngrok
 
 
 def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
-    if tunnel.lower() == "ngrock":
+    if tunnel.lower() == "ngrok":
         tunnel = ngrok.connect(port)
         dash_app = JupyterDash(
         external_stylesheets=[
@@ -25,6 +25,7 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
         ],
         name='dash-app-1',
+        server_url=tunnel.public_url,
         )
 
         dash_app.layout = html.Div()
@@ -37,7 +38,6 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
         ],
         name='dash-app-1',
-        server_url=tunnel.public_url,
         )
 
         dash_app.layout = html.Div()
