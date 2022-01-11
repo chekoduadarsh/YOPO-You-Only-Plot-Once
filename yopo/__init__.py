@@ -14,6 +14,7 @@ from jupyter_dash import JupyterDash
 from yopo.dashboard import dashboardApp
 import requests
 from pyngrok import ngrok
+import dash_bootstrap_components as dbc
 
 
 def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
@@ -23,6 +24,7 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
         external_stylesheets=[
             'https://fonts.googleapis.com/css?family=Lato',
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+            dbc.themes.BOOTSTRAP
         ],
         name='dash-app-1',
         server_url=tunnel.public_url,

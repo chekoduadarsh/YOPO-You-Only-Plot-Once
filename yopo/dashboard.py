@@ -23,9 +23,7 @@ def dashboardApp(df, dash_app):
     """Create a Plotly Dash dashboard."""    
 
     dropdowns = []
-
-
-
+    
     plot_theme = "plotly_dark"
     tab_style = {
         'borderBottom': '1px solid #d6d6d6',
