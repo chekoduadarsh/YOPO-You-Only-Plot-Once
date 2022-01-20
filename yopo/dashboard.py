@@ -1213,6 +1213,7 @@ def create_data_table(df):
         id='database-table',
         columns=[{"name": i, "id": i} for i in df.columns],
         data=df.to_dict('records'),
+        style_cell={'textAlign': 'center'},
         page_size=300
     )
     return table
