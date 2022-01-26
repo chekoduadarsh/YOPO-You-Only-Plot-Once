@@ -47,13 +47,14 @@ def dashboardApp(df, dash_app):
         'padding': '6px'
     }
 
-    
+ 
     not_mandatory_font_style = {"color":"blue"}
     mandatory_font_style = {"color":"red"}
-    mandatory_div_style = { "margin-left": "1%", "width":"48%", "display":"inline-grid"}
-    only_mandatory_div_style = { "margin-left": "1%", "width":"98%", "margin-right": "1%","display":"inline-grid"}
-    not_mandatory_div_style = {"margin-left": "2%", "border-spacing":"2px",  "width":"48%", "display":"inline-grid"}
-    left_indent_style = {"margin-left": "1%",}
+    mandatory_div_style = { " marginLeft": "1%", "width":"48%", "display":"inline-grid"}
+    only_mandatory_div_style = { " marginLeft": "1%", "width":"98%", " marginRight": "1%","display":"inline-grid"}
+    not_mandatory_div_style = {" marginLeft": "2%", "border-spacing":"2px",  "width":"48%", "display":"inline-grid"}
+    left_indent_style = {" marginLeft": "1%",}
+
 
     
     for column in df.columns:
