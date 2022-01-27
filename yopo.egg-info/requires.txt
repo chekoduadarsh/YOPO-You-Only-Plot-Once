@@ -3,7 +3,6 @@ click>=7.1.2
 dash==2.0.0
 dash_bootstrap_components
 dash_daq
-dash_trich_components
 ipython
 jupyter
 jupyter_dash

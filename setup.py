@@ -25,7 +25,6 @@ setuptools.setup(
         "wtforms",
         "dash==2.0.0",
         "dash_daq",
-        "dash_trich_components",
         "pandas",
         "numpy",
         "dash_bootstrap_components",
