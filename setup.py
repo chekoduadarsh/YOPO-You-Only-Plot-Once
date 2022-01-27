@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="yopo",
-    version="0.0.11",
+    version="0.0.12",
     author="Adarsh Chekodu",
     author_email="chekodu.adarsh@gmail.com",
     description="You Plot Only Once",

@@ -10,7 +10,7 @@
 
 **You Only Plot Once**
 
-YOPO is an interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
+YOPO is an **~0 Code** interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chekoduadarsh/YOPO-You-Only-Plot-Once/blob/master/example.ipynb)
@@ -57,6 +57,7 @@ A code like this will generate multiple plots like given below.
 ![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_dataframe.png)
 ![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_histogram.png)
 ![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_scatterplot.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_custom.png)
 
 
 
