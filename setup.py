@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="yopo",
-    version="0.0.12",
+    version="0.0.13",
     author="Adarsh Chekodu",
     author_email="chekodu.adarsh@gmail.com",
     description="You Plot Only Once",
@@ -25,7 +25,6 @@ setuptools.setup(
         "wtforms",
         "dash==2.0.0",
         "dash_daq",
-        "dash_trich_components",
         "pandas",
         "numpy",
         "dash_bootstrap_components",

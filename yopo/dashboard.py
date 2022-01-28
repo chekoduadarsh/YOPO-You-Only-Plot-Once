@@ -11,7 +11,6 @@ import dash_daq as daq
 from dash.dependencies import Input, Output, State
 import string
 import random
-import dash_trich_components as dtc
 import urllib.parse
 import plotly.graph_objects as go
 import dash_bootstrap_components as dbc
