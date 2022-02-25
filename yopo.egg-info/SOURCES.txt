@@ -5,6 +5,7 @@ setup.py
 yopo/__init__.py
 yopo/__version__.py
 yopo/dashboard.py
+yopo/util.py
 yopo.egg-info/PKG-INFO
 yopo.egg-info/SOURCES.txt
 yopo.egg-info/dependency_links.txt
