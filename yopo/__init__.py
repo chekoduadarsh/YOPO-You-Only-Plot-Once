@@ -17,7 +17,8 @@ from pyngrok import ngrok
 import dash_bootstrap_components as dbc
 
 
-def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
+def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = "", plotly_config= {}):
+    
     if tunnel.lower() == "ngrok":
         tunnel = ngrok.connect(port)
         dash_app = JupyterDash(
@@ -31,7 +32,7 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
         )
 
         dash_app.layout = html.Div()
-        dash_app = dashboardApp(input,dash_app)
+        dash_app = dashboardApp(input,dash_app,plotly_config)
         dash_app.run_server(mode=mode,port=port)
     else:
         dash_app = JupyterDash(
@@ -44,7 +45,7 @@ def dashboard(input=pd.DataFrame(),mode="inline",port=8050, tunnel = ""):
         )
 
         dash_app.layout = html.Div()
-        dash_app = dashboardApp(input,dash_app)
+        dash_app = dashboardApp(input,dash_app,plotly_config)
         dash_app.run_server(mode=mode,port=port)
 
 def kill_dashboard(host="localhost", port=8050):
