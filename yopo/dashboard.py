@@ -60,8 +60,11 @@ def dashboardApp(df, dash_app, plotly_config):
         " marginLeft": "2%", "border-spacing": "2px",  "width": "48%", "display": "inline-grid"}
     left_indent_style = {" marginLeft": "1%", }
 
+    df.insert(0,"Index", df.index)
+    
     for column in df.columns:
         dropdowns.append({"label": column, "value": column})
+
     barmode = [{"label": "stack", "value": "stack"},
                {"label": "group", "value": "group"}]
 
