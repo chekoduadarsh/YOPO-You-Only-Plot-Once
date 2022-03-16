@@ -22,7 +22,6 @@ def dashboardApp(df, dash_app, plotly_config):
     dropdowns = []
     plot_theme = None
     plotly_color_continuous_scale = None
-    print(plotly_config)
     if "template" in plotly_config.keys():
       plot_theme = plotly_config["template"]
     if "color_continuous_scale" in plotly_config.keys():
