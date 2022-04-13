@@ -50,7 +50,7 @@ python3 -m pip install .
 # Usage
 
 its very easy to use YOPO, u just need to pass the dataframe and it will generate the dashboard. 
-![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_iris_code.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_iris_code.jpeg)
 
 A code like this will generate multiple plots like given below.
 
