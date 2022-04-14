@@ -8,6 +8,8 @@
 ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
+[![Downloads](https://pepy.tech/badge/yopo)](https://pepy.tech/project/yopo)
+
 **You Only Plot Once**
 
 YOPO is an **~0 Code** interactive dashboard which generates various standard plots.you can create various graphs and charts with a click of a button. This tool uses Dash and Flask in backend.
