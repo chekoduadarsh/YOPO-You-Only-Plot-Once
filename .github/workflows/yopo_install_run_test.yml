@@ -22,7 +22,8 @@ jobs:
         pip install yopo
     - uses: jannekem/run-python-script-action@v1
       name: Running Test Code
-    - run: |
+      with:           
+        script: |
           import os
           from yopo import dashboard
           import pandas as pd
