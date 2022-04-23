@@ -21,6 +21,7 @@ jobs:
         pip install yopo
     - name: Running Test Code
       run: |
+          import os
           from yopo import dashboard
           import pandas as pd
           df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv")
