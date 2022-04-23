@@ -21,11 +21,8 @@ def dashboardApp(df, dash_app, plotly_config):
 
     dropdowns = []
     plot_theme = None
-    plotly_color_continuous_scale = None
     if "template" in plotly_config.keys():
       plot_theme = plotly_config["template"]
-    if "color_continuous_scale" in plotly_config.keys():
-        plotly_color_continuous_scale = plotly_config["color_continuous_scale"]
 
     tab_style = {
         'borderBottom': '1px solid #d6d6d6',
@@ -783,7 +780,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "color": strNoneConvert(input3),
                                "size": strNoneConvert(input4),
                                "template": plot_theme, 
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input5))
 
             fig = px.scatter(df, **input_parametes)
@@ -810,7 +807,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "color": strNoneConvert(input3),
                                "line_group": strNoneConvert(input4),
                                "template": plot_theme, 
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                                }
 
             input_parametes.update(otherinputtodict(input5))
 
@@ -836,7 +833,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "color": strNoneConvert(input3),
                                "barmode": strNoneConvert(input4),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
 
             input_parametes.update(otherinputtodict(input5))
 
@@ -860,7 +857,7 @@ def dashboardApp(df, dash_app, plotly_config):
             input_parametes = {"values": strNoneConvert(input1),
                                "names": strNoneConvert(input2),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
 
             input_parametes.update(otherinputtodict(input3))
 
@@ -883,7 +880,7 @@ def dashboardApp(df, dash_app, plotly_config):
                 input_parametes = {"color": strNoneConvert(input2),
                                    "values": strNoneConvert(input3),
                                    "template": plot_theme,
-                                   "color_continuous_scale": plotly_color_continuous_scale}
+                                   }
 
                 input_parametes.update(otherinputtodict(input4))
 
@@ -909,7 +906,7 @@ def dashboardApp(df, dash_app, plotly_config):
                     "color": strNoneConvert(input2),
                     "values": strNoneConvert(input3),
                     "template": plot_theme,
-                    "color_continuous_scale": plotly_color_continuous_scale}
+                    }
 
                 input_parametes.update(otherinputtodict(input4))
 
@@ -934,7 +931,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "y": strNoneConvert(input2),
                                "color": strNoneConvert(input3),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input4))
 
             fig = px.box(df, **input_parametes)
@@ -957,7 +954,7 @@ def dashboardApp(df, dash_app, plotly_config):
                 input_parametes = {"x": strNoneConvert(input1),
                                    "color": strNoneConvert(input2),
                                    "template": plot_theme,
-                                   "color_continuous_scale": plotly_color_continuous_scale}
+                                   }
 
                 input_parametes.update(otherinputtodict(input3))
 
@@ -985,7 +982,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "color": strNoneConvert(input3),
                                "line_group": strNoneConvert(input4),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input5))
 
             fig = px.area(df, **input_parametes)
@@ -1009,7 +1006,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                    "y": strNoneConvert(input2),
                                    "z": strNoneConvert(input3),
                                    "template": plot_theme,
-                                   "color_continuous_scale": plotly_color_continuous_scale}
+                                   }
                 input_parametes.update(otherinputtodict(input4))
 
                 fig = px.density_heatmap(df, **input_parametes)
@@ -1034,7 +1031,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                    "y": strNoneConvert(input1),
                                    "color": strNoneConvert(input3),
                                    "template": plot_theme,
-                                   "color_continuous_scale": plotly_color_continuous_scale}
+                                   }
                 input_parametes.update(otherinputtodict(input4))
 
                 fig = px.violin(df, **input_parametes)
@@ -1061,7 +1058,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "size": strNoneConvert(input4),
                                "trendline": strNoneConvert(input5),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input6))
 
             fig = px.scatter(df, **input_parametes)
@@ -1083,7 +1080,7 @@ def dashboardApp(df, dash_app, plotly_config):
             input_parametes = {"locations": strNoneConvert(input1),
                                "color": strNoneConvert(input2),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input3))
 
             fig = px.line_geo(df, **input_parametes)
@@ -1120,7 +1117,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "zoom": 0,
                                "mapbox_style": "stamen-terrain",
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input5))
 
             fig = px.density_mapbox(df, **input_parametes)
@@ -1197,7 +1194,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "color": strNoneConvert(input4),
                                "size": strNoneConvert(input5),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input6))
 
             fig = px.scatter_ternary(df, **input_parametes)
@@ -1224,7 +1221,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "size": strNoneConvert(input4),
                                "symbol": strNoneConvert(input5),
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input6))
 
             fig = px.scatter_polar(df, **input_parametes)
@@ -1254,7 +1251,7 @@ def dashboardApp(df, dash_app, plotly_config):
                                "v": df[input5],
                                "w": df[input6],
                                "template": plot_theme,
-                               "color_continuous_scale": plotly_color_continuous_scale}
+                               }
             input_parametes.update(otherinputtodict(input7))
 
             fig = go.Figure(data=go.Streamtube(**input_parametes))

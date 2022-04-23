@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: yopo
-Version: 0.0.20
+Version: 0.0.21
 Summary: You Plot Only Once
 Home-page: https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once
 Author: Adarsh Chekodu
@@ -21,6 +21,8 @@ License-File: LICENSE.txt
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+
+[![Downloads](https://pepy.tech/badge/yopo)](https://pepy.tech/project/yopo)
 
 **You Only Plot Once**
 
@@ -64,7 +66,7 @@ python3 -m pip install .
 # Usage
 
 its very easy to use YOPO, u just need to pass the dataframe and it will generate the dashboard. 
-![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_iris_code.png)
+![](https://raw.githubusercontent.com/chekoduadarsh/YOPO-You-Only-Plot-Once/master/media/sample_iris_code.jpeg)
 
 A code like this will generate multiple plots like given below.
 
