@@ -19,6 +19,7 @@ jobs:
     - name: Install YOPO
       run: |
         python -m pip install --upgrade pip
+        pip install werkzeug==2.0.1
         pip install yopo
     - uses: jannekem/run-python-script-action@v1
       name: Running Test Code
