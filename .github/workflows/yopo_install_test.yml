@@ -1,4 +1,4 @@
-name: YOPO Install and Run Test
+name: YOPO Install Test
 on: [push]
 jobs:
   build:
@@ -21,12 +21,3 @@ jobs:
         python -m pip install --upgrade pip
         pip install werkzeug==2.0.1
         pip install yopo
-    - uses: jannekem/run-python-script-action@v1
-      name: Running Test Code
-      with:           
-        script: |
-          import os
-          from yopo import dashboard
-          import pandas as pd
-          df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv")
-          dashboard(input=df,mode="inline",port=8052, plotly_config={"template":"plotly_dark"})
