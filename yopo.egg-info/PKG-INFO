@@ -1,12 +1,11 @@
 Metadata-Version: 2.1
 Name: yopo
-Version: 0.0.21
+Version: 0.0.23
 Summary: You Plot Only Once
 Home-page: https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once
 Author: Adarsh Chekodu
 Author-email: chekodu.adarsh@gmail.com
 License: Apache License 2.0
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
 Description-Content-Type: text/markdown
@@ -90,4 +89,3 @@ Feel free to adapt it criticize it and support it the way you like!!
 
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chekoduadarsh)
-

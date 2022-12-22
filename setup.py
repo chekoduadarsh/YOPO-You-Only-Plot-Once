@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name="yopo",
-    version="0.0.21",
+    version="0.0.23",
     author="Adarsh Chekodu",
     author_email="chekodu.adarsh@gmail.com",
     description="You Plot Only Once",
@@ -17,6 +17,7 @@ setuptools.setup(
     url="https://github.com/chekoduadarsh/YOPO-You-Only-Plot-Once",
     packages=setuptools.find_packages(exclude=("tests",)),
     install_requires=[
+        "Werkzeug==2.0.3",
         "MarkupSafe>=2.0",
         "jupyter_dash",
         "click>=7.1.2",
